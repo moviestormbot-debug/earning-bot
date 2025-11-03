@@ -25,6 +25,7 @@ import uuid
 from datetime import datetime, timedelta, timezone
 import nest_asyncio
 from rapidfuzz import fuzz, process
+import nest_asyncio nest_asyncio.apply()
 
 from telegram import (
     Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto,
