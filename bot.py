@@ -1849,7 +1849,13 @@ async def run_bot():
 
 if __name__ == "__main__":
     try:
-        asyncio.run(run_bot())
+        import nest_asyncio
+        nest_asyncio.apply()
+
+        import asyncio
+        loop = asyncio.get_event_loop()
+        loop.create_task(run_bot())
+        loop.run_forever()
     except KeyboardInterrupt:
-        print("ð Stopping bot, saving data...")
+        print("⏹️ Stopping bot, saving data...")
         save_all()
